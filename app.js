@@ -42,9 +42,10 @@ const reset = () => {
     colorDisplay.textContent = pickedColor;
     for (let i = 0; i < squares.length; i++) {
         if (colors[i]) {
+            squares[i].style.display = "block";
             squares[i].style.backgroundColor = colors[i];
         } else {
-            squares[i].style.backgroundColor = "black";
+            squares[i].style.display = "none";
         }
     }
     title.style.backgroundColor = "steelblue";
@@ -106,7 +107,7 @@ for (let i = 0; i < squares.length; i++) {
             //set all the squares to correct color
             changeColors(pickedColor);
             title.style.backgroundColor = pickedColor;
-            resetButton.textContent = "Play Again?"
+            resetButton.textContent = "Play Again?";
         }   else {
             //Fade out the incorrect div when clicked
             this.style.backgroundColor = "black";
